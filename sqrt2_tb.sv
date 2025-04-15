@@ -163,7 +163,7 @@ module sqrt2_tb;
         $finish;
     end
     
-	always @(negedge CLK) begin
+	always @(posedge CLK) begin
 		$fwrite(fd, "timw: %d, num = %h, res %h, is_nan %h, is_ninf %h, is_pinf %h,   \n", $time , io_data_wire, RESULT, IS_NAN, IS_NINF, IS_PINF);
 	end
     
