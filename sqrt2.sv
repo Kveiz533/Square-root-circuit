@@ -44,8 +44,6 @@ module sqrt2(
         if (ENABLE && cnt <= 12 && !result) begin   
             cnt = cnt + 1;
 
-            // $display("Такт %d", cnt);
-
             if (cnt == 1) begin
                 sign = IO_DATA[15];
                 exp = IO_DATA[14:10];
