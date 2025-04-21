@@ -118,10 +118,15 @@ module sqrt2(
                     exp = 0;
                 end;
                 
-                if (is_neg_zero || is_pinf || is_ninf) begin // если крайние случаи 
+                if (is_neg_zero || is_pinf || is_pos_zero) begin // если крайние случаи 
                     answer = (sign << 15) + (exp << 10) + iter_result[9:0]; 
                     result = 1;
-                end else if (is_nan) begin 
+                end else if (is_nan || is_ninf || is_neg) begin 
+                    if ((is_neg || is_ninf) && !is_nan) begin 
+                        answer = 16'hfe00;
+                        is_ninf = 0;
+                        is_nan = 1;
+                    end
                     result = 1;
                     answer[9] = 1; 
                 end else begin

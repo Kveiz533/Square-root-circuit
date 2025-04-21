@@ -95,7 +95,7 @@ module sqrt2_tb;
 		ENABLE = 1;
 		#2
 		IO_DATA = 16'bzzzzzzzzzzzzzzzz;
-        #22;
+        #2;
 
 		#0
 		ENABLE = 0;
@@ -108,7 +108,7 @@ module sqrt2_tb;
 
 		#0
 		ENABLE = 0;
- 		$fwrite(fd, "\nTest #4 (not quite nan)\n");
+ 		$fwrite(fd, "\nTest #4.1 (nan)\n");
 		IO_DATA = 16'h7d30;
 		ENABLE = 1;
 		#2
@@ -117,8 +117,71 @@ module sqrt2_tb;
 
 		#0
 		ENABLE = 0;
- 		$fwrite(fd, "\nTest #5 (quite nan)\n");
+ 		$fwrite(fd, "\nTest #4.2 (nan)\n");
+		IO_DATA = 16'hffff;
+		ENABLE = 1;
+		#2
+		IO_DATA = 16'bzzzzzzzzzzzzzzzz;
+        #2;
+
+		#0
+		ENABLE = 0;
+ 		$fwrite(fd, "\nTest #4.3 (nan)\n");
+		IO_DATA = 16'hfe60;
+		ENABLE = 1;
+		#2
+		IO_DATA = 16'bzzzzzzzzzzzzzzzz;
+        #2;
+
+		#0
+		ENABLE = 0;
+ 		$fwrite(fd, "\nTest #4.4 (nan)\n");
+		IO_DATA = 16'hfc00;
+		ENABLE = 1;
+		#2
+		IO_DATA = 16'bzzzzzzzzzzzzzzzz;
+        #2;
+
+		#0
+		ENABLE = 0;
+ 		$fwrite(fd, "\nTest #4.5 (nan)\n");
+		IO_DATA = 16'h7d00;
+		ENABLE = 1;
+		#2
+		IO_DATA = 16'bzzzzzzzzzzzzzzzz;
+        #2;
+
+		#0
+		ENABLE = 0;
+ 		$fwrite(fd, "\nTest #4.6 (nan)\n");
 		IO_DATA = 16'h7f30;
+		ENABLE = 1;
+		#2
+		IO_DATA = 16'bzzzzzzzzzzzzzzzz;
+        #2;
+
+		#0
+		ENABLE = 0;
+ 		$fwrite(fd, "\nTest #4.7 (nan)\n");
+		IO_DATA = 16'h8541;
+		ENABLE = 1;
+		#2
+		IO_DATA = 16'bzzzzzzzzzzzzzzzz;
+        #2;
+
+		#0
+		ENABLE = 0;
+ 		$fwrite(fd, "\nTest #4.8 (nan)\n");
+		IO_DATA = 16'ha000;
+		ENABLE = 1;
+		#2
+		IO_DATA = 16'bzzzzzzzzzzzzzzzz;
+        #2;
+
+		#0
+		ENABLE = 0;
+ 		$fwrite(fd, "\nTest #4.9 (nan)\n");
+		IO_DATA = 16'h9eac;
 		ENABLE = 1;
 		#2
 		IO_DATA = 16'bzzzzzzzzzzzzzzzz;
